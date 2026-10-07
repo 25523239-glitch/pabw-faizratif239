@@ -1,0 +1,369 @@
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jadwal dan Catatan Olahraga Saya</title>
+
+    <!-- =================================================
+         URUTAN PEMUATAN CSS
+         ================================================= -->
+
+    <!-- 1. Design Token -->
+    <link rel="stylesheet" href="tokens.css">
+
+    <!-- 2. Gaya Dasar -->
+    <link rel="stylesheet" href="base.css">
+
+    <!-- 3. Tata Letak -->
+    <link rel="stylesheet" href="layout.css">
+
+    <!-- 4. Komponen -->
+    <link rel="stylesheet" href="komponen.css">
+
+    <!-- 5. Tema -->
+    <link rel="stylesheet" href="tema.css">
+
+    <!-- 6. Responsif -->
+    <link rel="stylesheet" href="responsif.css">
+</head>
+
+
+<body>
+
+    <!-- =================================================
+         CONTAINER
+         ================================================= -->
+
+    <div class="container">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header>
+
+            <!-- =================================================
+                 F.2 — PENGALIH TEMA
+                 Tanpa JavaScript
+                 ================================================= -->
+
+            <input
+                type="checkbox"
+                id="tema"
+                class="pengalih-tema"
+            >
+
+            <label
+                for="tema"
+                class="tombol-tema"
+            >
+                Tema gelap
+            </label>
+
+
+            <!-- =================================================
+                 BARIS JUDUL + NAVBAR
+                 ================================================= -->
+
+            <div class="header-top">
+
+                <!-- JUDUL -->
+                <div class="header-brand">
+                    <span class="brand-mark" aria-hidden="true">OR</span>
+                    <h1>
+                        Jadwal dan Catatan Olahraga Saya
+                    </h1>
+                </div>
+
+
+                <!-- NAVIGASI -->
+                <nav class="navbar" aria-label="Navigasi utama">
+
+                    <a href="#jadwal">
+                        Jadwal Mingguan
+                    </a>
+
+                    <a href="#form">
+                        Formulir Latihan
+                    </a>
+
+                    <a href="#riwayat">
+                        Riwayat Olahraga
+                    </a>
+
+                </nav>
+
+            </div>
+
+
+            <!-- =================================================
+                 DESKRIPSI
+                 ================================================= -->
+
+            <p class="deskripsi">
+                Halaman ini digunakan untuk merencanakan target mingguan
+                dan mencatat setiap aktivitas olahraga harian secara teratur.
+            </p>
+
+
+            <!-- =================================================
+                 GAMBAR BANNER
+                 ================================================= -->
+
+            <img
+                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80"
+                alt="Banner olahraga"
+                class="banner-img"
+            >
+
+        </header>
+
+
+        <main class="isi">
+
+            <!-- =================================================
+                 SIDEBAR
+                 ================================================= -->
+
+            <aside class="sidebar sisi">
+
+                <h2>Menu Halaman</h2>
+
+                <nav class="sidebar-menu" aria-label="Navigasi bagian">
+                    <a href="#jadwal">Jadwal Mingguan</a>
+                    <a href="#form">Formulir Latihan</a>
+                    <a href="#riwayat">Riwayat Olahraga</a>
+                </nav>
+
+            </aside>
+
+
+            <!-- =================================================
+                 MAIN
+                 ================================================= -->
+
+            <div class="grid utama">
+
+
+            <!-- =================================================
+                 SECTION 1 — JADWAL
+                 ================================================= -->
+
+            <section id="jadwal" class="card kartu">
+
+                <h2>
+                    Target &amp; Jadwal Mingguan
+                </h2>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Hari</th>
+                                <th>Jenis Olahraga</th>
+                                <th>Durasi (menit)</th>
+                                <th>Target Kalori</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+                                <td>Senin</td>
+                                <td>Lari Pagi</td>
+                                <td>30</td>
+                                <td>300 kcal</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Rabu</td>
+                                <td>Angkat Beban</td>
+                                <td>45</td>
+                                <td>250 kcal</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Jumat</td>
+                                <td>Bersepeda</td>
+                                <td>60</td>
+                                <td>400 kcal</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECTION 2 — FORMULIR
+                 ================================================= -->
+
+            <section id="form" class="card kartu">
+
+                <h2>
+                    Formulir Latihan
+                </h2>
+
+
+                <form>
+
+
+                    <!-- TANGGAL -->
+                    <div class="form-kolom">
+
+                        <label for="tanggal">
+                            Tanggal Latihan:
+                        </label>
+
+                        <input
+                            type="date"
+                            id="tanggal"
+                            name="tanggal"
+                            required
+                        >
+
+                        <p class="pesan-galat">
+                            Tanggal latihan wajib diisi.
+                        </p>
+
+                    </div>
+
+
+                    <!-- JENIS OLAHRAGA -->
+                    <div class="form-kolom">
+
+                        <label for="jenis">
+                            Jenis Olahraga:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="jenis"
+                            name="jenis"
+                            placeholder="Contoh: Berenang"
+                            required
+                        >
+
+                        <p class="pesan-galat">
+                            Jenis olahraga wajib diisi.
+                        </p>
+
+                    </div>
+
+
+                    <!-- DURASI -->
+                    <div class="form-kolom">
+
+                        <label for="durasi">
+                            Durasi Latihan:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="durasi"
+                            name="durasi"
+                            placeholder="30"
+                            min="1"
+                            required
+                        >
+
+                        <p class="pesan-galat">
+                            Durasi latihan harus diisi minimal 1 menit.
+                        </p>
+
+                    </div>
+
+
+                    <!-- TOMBOL -->
+                    <button type="submit">
+                        Catat Latihan
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 SECTION 3 — RIWAYAT
+                 ================================================= -->
+
+            <section
+                id="riwayat"
+                class="riwayat bawah"
+            >
+
+                <h2>
+                    Riwayat Olahraga
+                </h2>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Jenis Olahraga</th>
+                                <th>Durasi</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+                                <td>23 September 2026</td>
+                                <td>Lari Pagi</td>
+                                <td>30 menit</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer>
+
+            <p>
+                Faiz Ratif Az Zubair · 25523239 · 2026
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

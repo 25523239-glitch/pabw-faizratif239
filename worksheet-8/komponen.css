@@ -1,0 +1,391 @@
+/* =====================================================
+   KOMPONEN.CSS
+   ===================================================== */
+
+
+/* =====================================================
+   KARTU
+   ===================================================== */
+
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--card-radius);
+    padding: var(--card-pad);
+    box-shadow: var(--card-shadow);
+}
+
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-4);
+}
+
+.galeri .kartu {
+    display: grid;
+    align-content: start;
+    gap: var(--space-4);
+    min-height: 14rem;
+}
+
+.kartu__isi {
+    min-width: 0;
+}
+
+.kartu__judul {
+    overflow-wrap: anywhere;
+}
+
+.sorotan {
+    grid-column: span 2;
+}
+
+.papan {
+    grid-row: span 2;
+}
+
+.kartu__kaki {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+
+/* =====================================================
+   JUDUL SECTION
+   ===================================================== */
+
+h2 {
+    margin: 0;
+    padding-left: var(--space-2);
+    border-left: 4px solid var(--color-primary);
+    color: var(--color-heading);
+}
+
+
+/* =====================================================
+   NAVBAR LINK
+   ===================================================== */
+
+nav a {
+    display: inline-block;
+
+    padding: var(--space-2) var(--space-3);
+
+    color: var(--color-surface);
+    background-color: var(--color-primary);
+
+    border-radius: var(--control-radius);
+    text-decoration: none;
+
+    transition: background-color 0.2s ease;
+}
+
+
+/* HOVER NAVBAR */
+
+nav a:hover {
+    background-color: var(--color-primary-hover);
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   FORMULIR
+   ===================================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: var(--space-4);
+
+    background-color: var(--color-surface-soft);
+
+    padding: var(--space-4);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--card-radius);
+}
+
+
+/* =====================================================
+   E.1 — KOLOM ISIAN
+   ===================================================== */
+
+.form-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+
+/* LABEL */
+
+label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-fg);
+}
+
+
+/* INPUT, SELECT, TEXTAREA */
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    /* Wajib: mengikuti font halaman */
+    font: inherit;
+
+    padding: var(--space-2) var(--space-3);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--control-radius);
+
+    background-color: var(--color-surface);
+    color: var(--color-fg);
+}
+
+
+/* =====================================================
+   E.2 — KEADAAN FOKUS
+   ===================================================== */
+
+/* Fokus keyboard wajib terlihat */
+:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+
+/* Fokus pada kolom isian */
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    border-color: var(--color-focus);
+}
+
+
+/* =====================================================
+   E.3 — KEADAAN TIDAK SAH
+   ===================================================== */
+
+/*
+   Jangan menggunakan:
+
+   input:invalid {
+       border-color: var(--color-danger);
+   }
+
+   Karena input bisa langsung terlihat merah
+   sejak halaman pertama kali dibuka.
+*/
+
+
+/* Hanya setelah pengguna berinteraksi
+   atau mencoba mengirim form */
+
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border-color: var(--color-danger);
+    border-width: 2px;
+}
+
+
+/* =====================================================
+   E.3 — PESAN GALAT
+   ===================================================== */
+
+/* Default: disembunyikan */
+
+.pesan-galat {
+    display: none;
+
+    margin: 0;
+
+    color: var(--color-danger);
+    font-size: var(--text-sm);
+}
+
+
+/* Tampilkan pesan jika input di dalam
+   .form-kolom berada pada :user-invalid */
+
+.form-kolom:has(input:user-invalid) .pesan-galat,
+.form-kolom:has(select:user-invalid) .pesan-galat,
+.form-kolom:has(textarea:user-invalid) .pesan-galat {
+    display: block;
+}
+
+
+/* =====================================================
+   E.2 — KEADAAN VALID
+   ===================================================== */
+
+input:user-valid,
+select:user-valid,
+textarea:user-valid {
+    border-color: var(--color-primary);
+    border-width: 1px;
+}
+
+
+/* =====================================================
+   TOMBOL
+   ===================================================== */
+
+button {
+    width: fit-content;
+
+    /* Wajib: mengikuti font halaman */
+    font: inherit;
+
+    padding: var(--space-2) var(--space-4);
+
+    border: 1px solid transparent;
+    border-radius: var(--control-radius);
+
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+
+/* HOVER TOMBOL */
+
+button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+
+/* =====================================================
+   TABEL
+   ===================================================== */
+
+.table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--card-radius);
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-surface);
+}
+
+
+th {
+    padding: var(--space-3);
+
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+
+    text-align: center;
+}
+
+
+td {
+    padding: var(--space-3);
+
+    border: 1px solid var(--color-border);
+
+    text-align: center;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: var(--color-surface-soft);
+}
+
+
+tbody tr:hover {
+    background-color: var(--color-row-hover);
+}
+
+
+/* =====================================================
+   GAMBAR BANNER
+   ===================================================== */
+
+.banner-img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: var(--banner-height);
+
+    object-fit: cover;
+
+    border-radius: var(--radius-md);
+}
+
+
+/* =====================================================
+   RIWAYAT
+   ===================================================== */
+
+.riwayat {
+    background-color: var(--color-surface-subtle);
+
+    padding: var(--space-4);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--card-radius);
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .banner-img {
+        height: 220px;
+    }
+
+    th,
+    td {
+        padding: var(--space-2);
+        white-space: nowrap;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .banner-img {
+        height: 180px;
+    }
+
+    table {
+        font-size: var(--text-sm);
+    }
+
+    form {
+        padding: var(--space-3);
+    }
+
+    button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,146 @@
+
+/* =====================================================
+   TOKENS.CSS
+   ===================================================== */
+
+
+/* =====================================================
+   LAPIS 1 — PRIMITIF
+   Nilai mentah
+   ===================================================== */
+
+:root {
+
+    /* -------------------------------------------------
+       WARNA PRIMITIF
+       ------------------------------------------------- */
+
+    --blue-700: #1565C0;
+    --blue-600: #1976D2;
+    --blue-500: #2196F3;
+
+    --blue-50: #F0F7FF;
+
+    --gray-50: #F8FAFC;
+    --gray-300: #D1D5DB;
+    --gray-900: #0F172A;
+
+    --white: #FFFFFF;
+
+    --red-700: #B00020;
+
+
+    /* -------------------------------------------------
+       SPACING
+       ------------------------------------------------- */
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+
+
+    /* -------------------------------------------------
+       RADIUS
+       ------------------------------------------------- */
+
+    --radius-md: 0.5rem;
+
+
+    /* -------------------------------------------------
+       SHADOW
+       ------------------------------------------------- */
+
+    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.10);
+
+
+    /* -------------------------------------------------
+       UKURAN HURUF
+       ------------------------------------------------- */
+
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-xl: 1.5rem;
+    --text-3xl: 2.25rem;
+}
+
+
+/* =====================================================
+   LAPIS 2 — SEMANTIK
+   Peran dari nilai token
+   ===================================================== */
+
+:root {
+
+    /* -------------------------------------------------
+       WARNA UTAMA HALAMAN
+       ------------------------------------------------- */
+
+    --color-bg: var(--gray-50);
+    --color-fg: var(--gray-900);
+
+    --color-surface: var(--white);
+    --color-border: var(--gray-300);
+
+
+    /* -------------------------------------------------
+       WARNA AKSEN / PRIMARY
+       ------------------------------------------------- */
+
+    --color-primary: var(--blue-500);
+    --color-primary-hover: var(--blue-700);
+
+    /* Warna teks di atas warna primary */
+    --color-on-primary: var(--white);
+
+
+    /* -------------------------------------------------
+       JUDUL
+       ------------------------------------------------- */
+
+    --color-heading: var(--blue-700);
+    --color-heading-accent: var(--blue-600);
+
+
+    /* -------------------------------------------------
+       WARNA TAMBAHAN
+       ------------------------------------------------- */
+
+    --color-muted: #555555;
+
+    --color-surface-soft: var(--blue-50);
+    --color-surface-subtle: #F8FBFF;
+    --color-row-hover: #E3F2FD;
+
+    --color-footer-bg: var(--blue-700);
+    --color-footer-fg: var(--white);
+
+
+    /* -------------------------------------------------
+       KEADAAN ERROR DAN FOKUS
+       ------------------------------------------------- */
+
+    --color-danger: var(--red-700);
+
+    /* Lebih gelap agar kontras fokus pada tema terang
+       lebih aman terhadap latar halaman */
+    --color-focus: #1D4ED8;
+
+
+    /* -------------------------------------------------
+       KOMPONEN
+       ------------------------------------------------- */
+
+    --card-pad: var(--space-4);
+    --section-gap: var(--space-6);
+    --nav-gap: var(--space-3);
+
+    --container-width: 1100px;
+    --banner-height: 300px;
+
+    --card-radius: var(--radius-md);
+    --control-radius: var(--radius-md);
+
+    --card-shadow: var(--shadow-1);
+}
