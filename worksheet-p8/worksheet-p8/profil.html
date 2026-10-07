@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title id="judul-halaman">Jadwal dan Catatan Olahraga Saya</title>
+
+    <!-- CSS hasil Pertemuan 6 dipertahankan -->
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="komponen.css">
+    <link rel="stylesheet" href="tema.css">
+    <link rel="stylesheet" href="responsif.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <!-- Pengalih tema tanpa JavaScript -->
+            <input type="checkbox" id="tema" class="pengalih-tema">
+            <label for="tema" class="tombol-tema">Tema gelap</label>
+
+            <div class="header-top">
+
+                <div class="header-brand">
+                    <span class="brand-mark" aria-hidden="true">OR</span>
+                    <h1 id="judul-profil">Jadwal dan Catatan Olahraga Saya</h1>
+                </div>
+
+                <nav class="navbar" aria-label="Navigasi utama">
+                    <a href="#jadwal">Jadwal Mingguan</a>
+                    <a href="#form">Formulir Latihan</a>
+                    <a href="#proyek">Proyek</a>
+                    <a href="#riwayat">Riwayat Olahraga</a>
+                </nav>
+
+            </div>
+
+            <p class="deskripsi" id="deskripsi-profil">
+                Halaman ini digunakan untuk merencanakan target mingguan dan mencatat setiap aktivitas olahraga harian secara teratur.
+            </p>
+
+            <img
+                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80"
+                alt="Banner olahraga"
+                class="banner-img"
+            >
+
+        </header>
+
+        <main class="isi">
+
+            <aside class="sidebar sisi">
+
+                <h2>Profil Saya</h2>
+                <p><strong id="profil-nama">Faiz Ratif Az Zubair</strong></p>
+                <p id="profil-peran">Mahasiswa Informatika yang belajar front-end</p>
+                <p id="profil-bio">Memanfaatkan JavaScript modern untuk membuat halaman olahraga yang datanya dapat diolah.</p>
+                <p><strong>Keahlian:</strong></p>
+                <p id="profil-keahlian">HTML · CSS · JavaScript</p>
+                <p id="profil-kontak">Kontak: Belum ditambahkan</p>
+
+                <nav class="sidebar-menu" aria-label="Navigasi bagian">
+                    <a href="#jadwal">Jadwal Mingguan</a>
+                    <a href="#form">Formulir Latihan</a>
+                    <a href="#proyek">Proyek</a>
+                    <a href="#riwayat">Riwayat Olahraga</a>
+                </nav>
+
+            </aside>
+
+            <div class="grid utama">
+
+                <section id="jadwal" class="card kartu">
+                    <h2>Target &amp; Jadwal Mingguan</h2>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Hari</th>
+                                    <th>Jenis Olahraga</th>
+                                    <th>Durasi (menit)</th>
+                                    <th>Target Kalori</th>
+                                </tr>
+                            </thead>
+                            <tbody id="jadwal-body"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="form" class="card kartu">
+                    <h2>Formulir Latihan</h2>
+                    <form>
+                        <div class="form-kolom">
+                            <label for="tanggal">Tanggal Latihan:</label>
+                            <input type="date" id="tanggal" name="tanggal" required>
+                            <p class="pesan-galat">Tanggal latihan wajib diisi.</p>
+                        </div>
+
+                        <div class="form-kolom">
+                            <label for="jenis">Jenis Olahraga:</label>
+                            <input type="text" id="jenis" name="jenis" placeholder="Contoh: Berenang" required>
+                            <p class="pesan-galat">Jenis olahraga wajib diisi.</p>
+                        </div>
+
+                        <div class="form-kolom">
+                            <label for="durasi">Durasi Latihan:</label>
+                            <input type="number" id="durasi" name="durasi" placeholder="30" min="1" required>
+                            <p class="pesan-galat">Durasi latihan harus diisi minimal 1 menit.</p>
+                        </div>
+
+                        <button type="submit">Catat Latihan</button>
+                    </form>
+                    <p id="jumlah-latihan">Latihan tercatat: 0</p>
+                </section>
+
+                <section id="proyek" class="card kartu">
+                    <h2>Proyek Web Saya</h2>
+                    <p id="proyek-unggulan">Proyek unggulan: -</p>
+                    <p id="proyek-selesai">Jumlah proyek selesai: 0</p>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Judul</th>
+                                    <th>Tahun</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="proyek-body"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+
+            <section id="riwayat" class="riwayat bawah">
+                <h2>Riwayat Olahraga</h2>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Jenis Olahraga</th>
+                                <th>Durasi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="riwayat-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p id="footer-profil">Faiz Ratif Az Zubair · 25523239 · 2026</p>
+        </footer>
+
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
