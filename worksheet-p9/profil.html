@@ -132,6 +132,7 @@
                     </div>
 
                     <ul id="daftar" class="daftar-proyek"></ul>
+                    <li class="kartu">Halaman Profil Olahraga</li>
                     <p id="pesan-kosong" hidden>Tidak ada proyek pada kategori itu.</p>
 
                     <p id="proyek-unggulan">Proyek unggulan: -</p>
@@ -166,6 +167,28 @@
     </div>
 
     <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/dom.js"></script>
 </body>
 
 </html>
+<section id="proyek" class="card kartu">
+    <h2>Proyek</h2>
+
+    <div id="filter">
+        <button data-kategori="semua" class="aktif">Semua</button>
+        <button data-kategori="web">Web</button>
+        <button data-kategori="data">Data</button>
+    </div>
+
+    <ul id="daftar" class="daftar-proyek">
+        <li class="kartu">Halaman Profil Olahraga</li>
+        <li class="kartu">Jadwal Latihan Mingguan</li>
+        <li class="kartu">Formulir Catatan Latihan</li>
+    </ul>
+
+    <p id="pesan-kosong" hidden>Tidak ada proyek pada kategori itu.</p>
+
+    <p id="proyek-unggulan">Proyek unggulan: -</p>
+    <p id="proyek-selesai">Jumlah proyek selesai: 0</p>
+</section>import { daftarProyek } from "./app.js";
+

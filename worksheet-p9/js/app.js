@@ -16,7 +16,7 @@ const profil = {
 const jumlahProyek = 4;
 
 // D.1 — Array of object untuk proyek dan data halaman.
-const daftarProyek = [
+export const daftarProyek = [
     { judul: "Halaman Profil Olahraga", tahun: 2026, selesai: true },
     { judul: "Jadwal Latihan Mingguan", tahun: 2026, selesai: true },
     { judul: "Formulir Catatan Latihan", tahun: 2026, selesai: true },
@@ -29,7 +29,7 @@ const jadwalMingguan = [
     { hari: "Jumat", olahraga: "Bersepeda", durasi: 60, kalori: 400 }
 ];
 
-const riwayatOlahraga = [
+export const riwayatOlahraga = [
     { tanggal: "2026-09-23", olahraga: "Lari Pagi", durasi: 30 }
 ];
 
