@@ -106,6 +106,7 @@ const requiredElements = [
     footerProfil,
     jadwalBody,
     daftarProyekEl,
+    filterEl,
     riwayatBody,
     proyekUnggulanEl,
     proyekSelesaiEl,
@@ -208,6 +209,23 @@ jumlahLatihanEl.textContent = `Latihan tercatat: ${jumlahLatihanDicatat}`;
 tampilkanJadwal(jadwalMingguan);
 tampilkanProyek(proyekTerurut);
 tampilkanRiwayat(riwayatOlahraga);
+
+filterEl.addEventListener("click", (event) => {
+    const tombol = event.target instanceof Element ? event.target.closest("button") : null;
+    if (!tombol) return;
+
+    const kategori = tombol.dataset.kategori;
+    const terpilih = daftarProyek.filter(
+        (proyek) => kategori === "semua" || proyek.kategori === kategori
+    );
+
+    filterEl.querySelectorAll("button").forEach((item) => {
+        item.classList.remove("aktif");
+    });
+    tombol.classList.add("aktif");
+
+    tampilkanProyek(terpilih);
+});
 
 // D.4 / E.1 — Bukti data dapat diperiksa dari Console.
 console.log(kalimatPerkenalan);
