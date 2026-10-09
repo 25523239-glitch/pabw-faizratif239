@@ -34,3 +34,4 @@ Kriteria selesai saya: Warna utama #2196F3 dipilih karena memberikan tampilan bi
 # Penggunaan AI 
 - saya menggunakan ai pada bagian perubahan tema
 - mencocokkan const
+- saya menggunakan AI pada bagian D untuk menyempurnakan code program
