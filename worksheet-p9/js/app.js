@@ -17,10 +17,30 @@ const jumlahProyek = 4;
 
 // D.1 — Array of object untuk proyek dan data halaman.
 export const daftarProyek = [
-    { judul: "Halaman Profil Olahraga", tahun: 2026, selesai: true },
-    { judul: "Jadwal Latihan Mingguan", tahun: 2026, selesai: true },
-    { judul: "Formulir Catatan Latihan", tahun: 2026, selesai: true },
-    { judul: "Dashboard Olahraga Responsif", tahun: 2026, selesai: false }
+    {
+        judul: "Halaman Profil Olahraga",
+        tahun: 2026,
+        selesai: true,
+        kategori: "web"
+    },
+    {
+        judul: "Jadwal Latihan Mingguan",
+        tahun: 2026,
+        selesai: true,
+        kategori: "web"
+    },
+    {
+        judul: "Formulir Catatan Latihan",
+        tahun: 2026,
+        selesai: true,
+        kategori: "web"
+    },
+    {
+        judul: "Dashboard Olahraga Responsif",
+        tahun: 2026,
+        selesai: false,
+        kategori: "data"
+    }
 ];
 
 const jadwalMingguan = [
