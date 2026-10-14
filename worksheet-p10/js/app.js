@@ -1,5 +1,5 @@
 // P8 — JavaScript Modern ES6+, Struktur Data, dan Array Methods
-import "./api.js";
+import { ambilNotisia } from "./api.js";
 
 // B.1 — Data identitas disimpan sebagai object.
 const profil = {
