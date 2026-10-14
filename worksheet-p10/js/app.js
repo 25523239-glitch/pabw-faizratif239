@@ -1,4 +1,5 @@
 // P8 — JavaScript Modern ES6+, Struktur Data, dan Array Methods
+import "./api.js";
 
 // B.1 — Data identitas disimpan sebagai object.
 const profil = {
@@ -272,29 +273,3 @@ form.addEventListener("submit", (event) => {
 
     form.reset();
 });
-
-async function muat() {
-    const ALAMAT = "https://jsonplaceholder.typicode.com/posts/1";
-
-    try {
-        const respons = await fetch(ALAMAT);
-
-        console.log("Alamat API:", ALAMAT);
-        console.log("Status:", respons.status);
-        console.log("OK:", respons.ok);
-        console.log("Content-Type:", respons.headers.get("content-type"));
-
-        if (!respons.ok) {
-            throw new Error("Status " + respons.status);
-        }
-
-        const data = await respons.json();
-        console.log("Isi respons:", data);
-
-        return data;
-    } catch (error) {
-        console.error("Gagal memuat API:", error);
-    }
-}
-
-muat();
