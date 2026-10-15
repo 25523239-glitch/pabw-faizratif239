@@ -1,12 +1,13 @@
 
- // P11 — Pemasangan event listener
+ // P11 — Event dan Local Storage
 
 import { daftarProyek } from "./data.js";
 
 import {
     state,
     tambahLatihan,
-    ubahKategoriAktif
+    ubahKategoriAktif,
+    aturUlang
 } from "./state.js";
 
 import {
@@ -17,15 +18,41 @@ import {
     aturTombolFilterAktif
 } from "./dom.js";
 
-// Memasang semua event listener
+// Menampilkan proyek berdasarkan state
+export function renderProyekSesuaiState() {
+    const proyekTerpilih = daftarProyek.filter((proyek) => {
+        return (
+            state.kategoriAktif === "semua" ||
+            proyek.kategori === state.kategoriAktif
+        );
+    });
+
+    // Mengatur urutan judul
+    proyekTerpilih.sort((a, b) => {
+        const hasil = a.judul.localeCompare(b.judul, "id-ID");
+
+        return state.urutanTampilan === "judul-desc"
+            ? -hasil
+            : hasil;
+    });
+
+    aturTombolFilterAktif(state.kategoriAktif);
+    tampilkanProyek(proyekTerpilih);
+}
+
+// Memasang event listener
 export function pasangEvent() {
-    // Event delegation pada tombol filter
     elemen.filter.addEventListener("click", tanganiFilter);
 
-    // Event pengiriman formulir
     elemen.form.addEventListener("submit", tanganiFormSubmit);
 
-    // Hapus pesan validasi khusus saat pengguna mengetik kembali
+    // Tombol Atur Ulang
+    elemen.tombolAturUlang.addEventListener("click", () => {
+        aturUlang();
+        renderProyekSesuaiState();
+    });
+
+    // Menghapus validasi khusus saat mengetik kembali
     const jenisInput = elemen.form.querySelector("#jenis");
 
     if (jenisInput instanceof HTMLInputElement) {
@@ -35,7 +62,7 @@ export function pasangEvent() {
     }
 }
 
-// Menangani klik tombol filter
+// Menangani klik filter
 function tanganiFilter(event) {
     const tombol = event.target instanceof Element
         ? event.target.closest("button[data-kategori]")
@@ -50,28 +77,14 @@ function tanganiFilter(event) {
 
     const kategori = tombol.dataset.kategori ?? "semua";
 
-    // Perbarui state kategori
+    // Simpan kategori ke state dan Local Storage
     ubahKategoriAktif(kategori);
 
-    // Memilih proyek sesuai kategori
-    const proyekTerpilih = daftarProyek.filter((proyek) => {
-        return (
-            state.kategoriAktif === "semua" ||
-            proyek.kategori === state.kategoriAktif
-        );
-    });
-
-    // Urutkan proyek berdasarkan judul
-    proyekTerpilih.sort((a, b) =>
-        a.judul.localeCompare(b.judul, "id-ID")
-    );
-
-    // Perbarui tampilan
-    aturTombolFilterAktif(state.kategoriAktif);
-    tampilkanProyek(proyekTerpilih);
+    // Gambar ulang daftar proyek
+    renderProyekSesuaiState();
 }
 
-// Menangani pengiriman formulir latihan
+// Menangani formulir latihan
 function tanganiFormSubmit(event) {
     event.preventDefault();
 
@@ -84,9 +97,7 @@ function tanganiFormSubmit(event) {
         !(jenisInput instanceof HTMLInputElement) ||
         !(durasiInput instanceof HTMLInputElement)
     ) {
-        throw new Error(
-            "Kolom formulir latihan tidak ditemukan."
-        );
+        throw new Error("Kolom formulir latihan tidak ditemukan.");
     }
 
     const tanggal = tanggalInput.value;
@@ -94,13 +105,11 @@ function tanganiFormSubmit(event) {
     const nilaiDurasi = durasiInput.value;
     const durasi = Number(nilaiDurasi);
 
-    // Validasi tanggal
     if (!tanggal) {
         tanggalInput.reportValidity();
         return;
     }
 
-    // Validasi jenis olahraga
     if (!olahraga) {
         jenisInput.setCustomValidity(
             "Jenis olahraga wajib diisi."
@@ -112,7 +121,6 @@ function tanganiFormSubmit(event) {
 
     jenisInput.setCustomValidity("");
 
-    // Validasi durasi
     if (
         !nilaiDurasi ||
         !Number.isFinite(durasi) ||
@@ -122,17 +130,14 @@ function tanganiFormSubmit(event) {
         return;
     }
 
-    // Menambahkan latihan ke state
     tambahLatihan({
         tanggal,
         olahraga,
         durasi
     });
 
-    // Memperbarui halaman
     tampilkanRiwayat(state.riwayatOlahraga);
     tampilkanJumlahLatihan(state.jumlahLatihanDicatat);
 
-    // Mengosongkan formulir setelah berhasil disimpan
     elemen.form.reset();
 }

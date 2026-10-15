@@ -36,3 +36,4 @@ Kriteria selesai saya: Warna utama #2196F3 dipilih karena memberikan tampilan bi
 - mencocokkan const
 - saya menggunakan AI pada bagian D untuk menyempurnakan code program
 - saya menggunakan AI untuk menyesuaikan kode async
+- saya menggunakan AI untuk memeriksa Local Storage

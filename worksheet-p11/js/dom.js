@@ -25,13 +25,13 @@ export const elemen = {
     daftarProyek: document.querySelector("#daftar"),
     filter: document.querySelector("#filter"),
     pesanKosong: document.querySelector("#pesan-kosong"),
-
+    
     proyekUnggulan: document.querySelector("#proyek-unggulan"),
     proyekSelesai: document.querySelector("#proyek-selesai"),
 
     riwayatBody: document.querySelector("#riwayat-body"),
     jumlahLatihan: document.querySelector("#jumlah-latihan"),
-
+    tombolAturUlang: document.querySelector("#atur-ulang"),
     form: document.querySelector("#form form")
 };
 
