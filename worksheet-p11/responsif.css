@@ -1,0 +1,72 @@
+/* =====================================================
+   RESPONSIF.CSS
+   ===================================================== */
+
+/* B.1 — dasar: satu kolom */
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "sisi"
+        "utama"
+        "bawah";
+    gap: var(--space-4);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+.container {
+    min-height: 100dvh;
+}
+
+
+/* =====================================================
+   C.1 — DUA ATURAN TAMBAHAN
+   ===================================================== */
+
+/* tablet: galeri dua kolom */
+@media (min-width: 48rem) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* desktop: sidebar bersanding dengan konten */
+@media (min-width: 60rem) {
+    .content {
+        grid-template-columns: 16rem 1fr;
+        grid-template-areas:
+            "sisi utama"
+            "sisi bawah";
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =====================================================
+   D.1 — ISI YANG MENYESUAIKAN
+   ===================================================== */
+
+/* gambar tidak melebihi wadahnya */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* tabel lebar dapat digulir sendiri */
+.table-wrap {
+    overflow-x: auto;
+}
+
+/* teks mengikuti ukuran huruf pengguna */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
